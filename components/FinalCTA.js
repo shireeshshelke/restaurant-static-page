@@ -1,8 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Flame, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function FinalCTA() {
+  const { t } = useLanguage();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -42,7 +44,7 @@ export default function FinalCTA() {
             className="text-5xl md:text-6xl font-bold text-white leading-tight"
             variants={itemVariants}
           >
-            Hungry? Let Us Cook For You Today.
+            {t('finalCta.headline')}
           </motion.h2>
 
           {/* Subtext */}
@@ -50,7 +52,7 @@ export default function FinalCTA() {
             className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto"
             variants={itemVariants}
           >
-            Experience authentic, hygienic, home-cooked meals delivered hot to your doorstep in 30-45 minutes.
+            {t('finalCta.subtext')}
           </motion.p>
 
           {/* Trust Badges */}
@@ -59,13 +61,13 @@ export default function FinalCTA() {
             variants={itemVariants}
           >
             <div className="bg-white/20 backdrop-blur-md px-6 py-3 rounded-full text-white font-semibold">
-              ✓ 100% Hygienic
+              {t('finalCta.badge1')}
             </div>
             <div className="bg-white/20 backdrop-blur-md px-6 py-3 rounded-full text-white font-semibold">
-              ✓ Fresh Prepared
+              {t('finalCta.badge2')}
             </div>
             <div className="bg-white/20 backdrop-blur-md px-6 py-3 rounded-full text-white font-semibold">
-              ✓ No Preservatives
+              {t('finalCta.badge3')}
             </div>
           </motion.div>
 
@@ -80,7 +82,7 @@ export default function FinalCTA() {
               whileTap={{ scale: 0.95 }}
               onClick={() => document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' })}
             >
-              Order Now
+              {t('finalCta.orderButton')}
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -94,7 +96,7 @@ export default function FinalCTA() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View Menu
+              {t('finalCta.menuButton')}
             </motion.button>
           </motion.div>
 
@@ -105,15 +107,15 @@ export default function FinalCTA() {
           >
             <div>
               <h4 className="text-3xl font-bold">5000+</h4>
-              <p className="text-white/90">Happy Customers</p>
+              <p className="text-white/90">{t('finalCta.stat1')}</p>
             </div>
             <div>
               <h4 className="text-3xl font-bold">4.8★</h4>
-              <p className="text-white/90">Avg Rating</p>
+              <p className="text-white/90">{t('finalCta.stat2')}</p>
             </div>
             <div>
               <h4 className="text-3xl font-bold">30min</h4>
-              <p className="text-white/90">Avg Delivery</p>
+              <p className="text-white/90">{t('finalCta.stat3')}</p>
             </div>
           </motion.div>
         </motion.div>

@@ -2,8 +2,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChefHat, Menu, X } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navbar() {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -17,10 +20,10 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { label: 'Menu', href: '#menu' },
-    { label: 'About', href: '#story' },
-    { label: 'Hygiene', href: '#hygiene' },
-    { label: 'Reviews', href: '#reviews' },
+    { label: t('nav.menu'), href: '#menu' },
+    { label: t('nav.about'), href: '#story' },
+    { label: t('nav.hygiene'), href: '#hygiene' },
+    { label: t('nav.reviews'), href: '#reviews' },
   ];
 
   return (
@@ -45,10 +48,10 @@ export default function Navbar() {
           </div>
           <div>
             <h1 className={`text-2xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-              Cloud Kitchen
+              {t('nav.logo')}
             </h1>
             <p className={`text-xs ${isScrolled ? 'text-gray-600' : 'text-white/80'}`}>
-              Ghar Jaisa Khana
+              {t('nav.tagline')}
             </p>
           </div>
         </motion.div>
@@ -71,15 +74,20 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Order Now Button & Mobile Menu Button */}
+        {/* Right Side - Language Switcher & Order Button */}
         <div className="flex items-center gap-4">
+          {/* Language Switcher - Desktop */}
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
+
           <motion.button
             className="btn-primary hidden md:inline-block text-sm"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' })}
           >
-            Order Now
+            {t('nav.orderNow')}
           </motion.button>
 
           {/* Mobile Menu Toggle */}
@@ -114,6 +122,12 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
+            
+            {/* Language Switcher - Mobile */}
+            <div className="mt-4 pt-4 border-t">
+              <LanguageSwitcher />
+            </div>
+
             <button
               className="btn-primary w-full text-sm mt-2"
               onClick={() => {
@@ -121,7 +135,7 @@ export default function Navbar() {
                 setMobileMenuOpen(false);
               }}
             >
-              Order Now
+              {t('nav.orderNow')}
             </button>
           </div>
         </motion.div>

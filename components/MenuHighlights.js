@@ -1,23 +1,26 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function MenuHighlights() {
+  const { t } = useLanguage();
+
   const categories = [
     {
-      title: 'Maharashtrian Specials',
+      title: t('menu.category1'),
       image: '/images/maharashtrian.jpg',
       dishes: ['Misal Pav', 'Batata Vada', 'Puran Poli', 'Ukdiche Modak', 'Amboli'],
       rating: 4.8,
     },
     {
-      title: 'Indian Curries',
+      title: t('menu.category2'),
       image: '/images/curries.jpg',
       dishes: ['Butter Chicken', 'Paneer Tikka Masala', 'Chole Bhature', 'Dal Makhani', 'Biryani'],
       rating: 4.9,
     },
     {
-      title: 'Western Snacks',
+      title: t('menu.category3'),
       image: '/images/western.jpg',
       dishes: ['Momos', 'Cheese Naan', 'Garlic Bread', 'Loaded Fries', 'Spring Rolls'],
       rating: 4.7,
@@ -55,10 +58,10 @@ export default function MenuHighlights() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Menu <span className="gradient-text">Highlights</span>
+            {t('menu.title')} <span className="gradient-text">{t('menu.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our bestsellers across different cuisines
+            {t('menu.subtitle')}
           </p>
         </motion.div>
 
@@ -118,7 +121,7 @@ export default function MenuHighlights() {
                 </div>
 
                 {/* CTA */}
-                <button className="w-full btn-primary text-sm">View Full Menu</button>
+                <button className="w-full btn-primary text-sm">{t('menu.viewMenu')}</button>
               </div>
             </motion.div>
           ))}

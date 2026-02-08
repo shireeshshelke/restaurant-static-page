@@ -1,23 +1,26 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Heart, Users, Leaf } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function YourStory() {
+  const { t } = useLanguage();
+
   const storyPoints = [
     {
       icon: Heart,
-      title: 'Started with Love',
-      description: 'Began when our founder craved the warmth of home-cooked meals after moving to the city.',
+      title: t('story.storyPoint1'),
+      description: t('story.storyPoint1Desc'),
     },
     {
       icon: Users,
-      title: 'Family Recipes',
-      description: 'Every dish is made using 30+ year old family recipes passed down through generations.',
+      title: t('story.storyPoint2'),
+      description: t('story.storyPoint2Desc'),
     },
     {
       icon: Leaf,
-      title: 'Pure Ingredients',
-      description: 'Only the finest, farm-fresh ingredients. No preservatives, no artificial flavors.',
+      title: t('story.storyPoint3'),
+      description: t('story.storyPoint3Desc'),
     },
   ];
 
@@ -70,19 +73,19 @@ export default function YourStory() {
               transition={{ delay: 0.2 }}
               viewport={{ once: true }}
             >
-              OUR STORY
+              {t('story.badge')}
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why We Started This <span className="gradient-text">Journey</span>
+              {t('story.title')} <span className="gradient-text">{t('story.titleHighlight')}</span>
             </h2>
 
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              In 2021, our founder left behind his grandmother's traditional kitchen to chase his dreams in the city. But nothing compared to the way grandma cooked—with love, care, and the finest ingredients. That longing inspired us to bring that same authentic, home-cooked experience to thousands of people.
+              {t('story.description1')}
             </p>
 
             <p className="text-lg text-gray-700 mb-12 leading-relaxed">
-              Today, we operate a licensed, hygienic kitchen where every meal is prepared with the same passion and attention to detail as if it were for our own family. We believe good food should be accessible, affordable, and absolutely delicious.
+              {t('story.description2')}
             </p>
 
             {/* Story points */}
@@ -114,7 +117,7 @@ export default function YourStory() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Order Your First Meal
+              {t('story.cta')}
             </motion.button>
           </motion.div>
         </div>

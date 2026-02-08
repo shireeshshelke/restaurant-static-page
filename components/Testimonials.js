@@ -1,8 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Testimonials() {
+  const { t } = useLanguage();
   const testimonials = [
     {
       name: 'Priya Sharma',
@@ -70,10 +72,10 @@ export default function Testimonials() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            What Our <span className="gradient-text">Customers Say</span>
+            {t('testimonials.title')} <span className="gradient-text">{t('testimonials.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Real stories from real customers who've experienced our food
+            {t('testimonials.subtitle')}
           </p>
         </motion.div>
 
@@ -128,15 +130,15 @@ export default function Testimonials() {
         >
           <div>
             <h3 className="text-4xl font-bold gradient-text">5000+</h3>
-            <p className="text-gray-600 mt-2">Happy Customers</p>
+            <p className="text-gray-600 mt-2">{t('testimonials.stat1')}</p>
           </div>
           <div>
             <h3 className="text-4xl font-bold gradient-text">4.8★</h3>
-            <p className="text-gray-600 mt-2">Average Rating</p>
+            <p className="text-gray-600 mt-2">{t('testimonials.stat2')}</p>
           </div>
           <div>
             <h3 className="text-4xl font-bold gradient-text">98%</h3>
-            <p className="text-gray-600 mt-2">Repeat Orders</p>
+            <p className="text-gray-600 mt-2">{t('testimonials.stat3')}</p>
           </div>
         </motion.div>
       </div>

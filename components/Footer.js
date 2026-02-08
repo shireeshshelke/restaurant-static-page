@@ -1,8 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
 import { ChefHat, Phone, MapPin, Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
@@ -79,13 +81,13 @@ export default function Footer() {
                   <ChefHat className="text-white" size={24} />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold">Cloud Kitchen</h2>
-                  <p className="text-xs text-gray-400">Ghar Jaisa Khana</p>
+                  <h2 className="text-2xl font-bold">{t('footer.brandName')}</h2>
+                  <p className="text-xs text-gray-400">{t('footer.tagline')}</p>
                 </div>
               </div>
 
               <p className="text-gray-400 mb-6">
-                Authentic, hygienic, home-cooked meals delivered fresh to your doorstep.
+                {t('footer.description')}
               </p>
 
               {/* Social Links */}
@@ -133,7 +135,7 @@ export default function Footer() {
             <motion.div
               variants={itemVariants}
             >
-              <h3 className="text-lg font-bold mb-6">Get in Touch</h3>
+              <h3 className="text-lg font-bold mb-6">{t('footer.contactSection')}</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex gap-3">
@@ -161,16 +163,16 @@ export default function Footer() {
         >
           {/* Copyright */}
           <p className="text-gray-400 text-sm text-center md:text-left">
-            © {currentYear} Cloud Kitchen. All rights reserved. Made with <span className="text-red-500">❤</span> in Pune.
+            © {currentYear} {t('footer.copyright')}
           </p>
 
           {/* Certifications */}
           <div className="flex gap-4 items-center">
             <div className="bg-gray-800 px-4 py-2 rounded-lg text-xs text-gray-400">
-              FSSAI Licensed
+              {t('footer.cert1')}
             </div>
             <div className="bg-gray-800 px-4 py-2 rounded-lg text-xs text-gray-400">
-              100% Hygienic
+              {t('footer.cert2')}
             </div>
           </div>
         </motion.div>

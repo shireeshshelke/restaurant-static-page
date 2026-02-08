@@ -1,13 +1,16 @@
 'use client';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Leaf, Utensils, Zap } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function WhyChooseUs() {
+  const { t } = useLanguage();
+
   const items = [
-    { icon: ShieldCheck, title: "Hygienic Kitchen", description: "FSSAI approved, certified clean" },
-    { icon: Leaf, title: "Fresh Ingredients", description: "Daily sourced, premium quality" },
-    { icon: Utensils, title: "Authentic Recipes", description: "Family recipes, home cooked taste" },
-    { icon: Zap, title: "Fast Delivery", description: "30-40 mins, hot & fresh" },
+    { icon: ShieldCheck, title: t('whyChooseUs.item1Title'), description: t('whyChooseUs.item1Desc') },
+    { icon: Leaf, title: t('whyChooseUs.item2Title'), description: t('whyChooseUs.item2Desc') },
+    { icon: Utensils, title: t('whyChooseUs.item3Title'), description: t('whyChooseUs.item3Desc') },
+    { icon: Zap, title: t('whyChooseUs.item4Title'), description: t('whyChooseUs.item4Desc') },
   ];
 
   const containerVariants = {
@@ -41,10 +44,10 @@ export default function WhyChooseUs() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Why <span className="gradient-text">Choose Us</span>
+            {t('whyChooseUs.title')} <span className="gradient-text">{t('whyChooseUs.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Build trust in just 5 seconds. Everything you need to know about our service.
+            {t('whyChooseUs.subtitle')}
           </p>
         </motion.div>
 

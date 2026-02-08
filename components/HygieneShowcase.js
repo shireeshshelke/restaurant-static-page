@@ -1,31 +1,33 @@
 'use client';
 import { motion } from 'framer-motion';
 import { CheckCircle, Droplets, Wind, ShieldCheck } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function HygieneShowcase() {
+  const { t } = useLanguage();
   const hygienePractices = [
     {
       icon: ShieldCheck,
-      title: 'FSSAI Certified',
-      description: 'Licensed and certified by Food Safety Authority',
+      title: t('hygiene.practice1'),
+      description: t('hygiene.practice1Desc'),
       image: '/images/hygiene-certification.jpg',
     },
     {
       icon: Wind,
-      title: 'Clean Kitchen',
-      description: 'Stainless steel counters, regularly sanitized surfaces',
+      title: t('hygiene.practice2'),
+      description: t('hygiene.practice2Desc'),
       image: '/images/hygiene-kitchen.jpg',
     },
     {
       icon: Droplets,
-      title: 'Washed Vegetables',
-      description: 'Triple-washed produce for maximum freshness',
+      title: t('hygiene.practice3'),
+      description: t('hygiene.practice3Desc'),
       image: '/images/hygiene-vegetables.jpg',
     },
     {
       icon: CheckCircle,
-      title: 'Safety Gear',
-      description: 'All staff wear hairnets, gloves, and aprons',
+      title: t('hygiene.practice4'),
+      description: t('hygiene.practice4Desc'),
       image: '/images/hygiene-staff.jpg',
     },
   ];
@@ -66,13 +68,13 @@ export default function HygieneShowcase() {
         >
           <div className="inline-flex items-center gap-2 bg-green-100 px-4 py-2 rounded-full mb-4">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-green-700 font-semibold text-sm">TRUST & SAFETY</span>
+            <span className="text-green-700 font-semibold text-sm">{t('hygiene.badge')}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Kitchen <span className="gradient-text">Hygiene Standards</span>
+            {t('hygiene.title')} <span className="gradient-text">{t('hygiene.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            We understand your biggest concern is food safety. Here's exactly how we maintain the highest hygiene standards.
+            {t('hygiene.subtitle')}
           </p>
         </motion.div>
 
@@ -134,24 +136,24 @@ export default function HygieneShowcase() {
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="text-green-600" size={32} />
               </div>
-              <h4 className="font-bold text-lg mb-2">Daily Cleaning</h4>
-              <p className="text-gray-600">Kitchen sanitized 3 times daily</p>
+              <h4 className="font-bold text-lg mb-2">{t('hygiene.commitment1')}</h4>
+              <p className="text-gray-600">{t('hygiene.commitment1Desc')}</p>
             </div>
 
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="text-green-600" size={32} />
               </div>
-              <h4 className="font-bold text-lg mb-2">Trained Staff</h4>
-              <p className="text-gray-600">Food safety certified team members</p>
+              <h4 className="font-bold text-lg mb-2">{t('hygiene.commitment2')}</h4>
+              <p className="text-gray-600">{t('hygiene.commitment2Desc')}</p>
             </div>
 
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="text-green-600" size={32} />
               </div>
-              <h4 className="font-bold text-lg mb-2">Quality Checks</h4>
-              <p className="text-gray-600">Multiple inspections before delivery</p>
+              <h4 className="font-bold text-lg mb-2">{t('hygiene.commitment3')}</h4>
+              <p className="text-gray-600">{t('hygiene.commitment3Desc')}</p>
             </div>
           </div>
         </motion.div>

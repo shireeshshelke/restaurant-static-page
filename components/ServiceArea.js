@@ -1,8 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
 import { MapPin, Clock } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ServiceArea() {
+  const { t } = useLanguage();
   const areas = [
     'Koregaon Park',
     'Baner',
@@ -55,10 +57,10 @@ export default function ServiceArea() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Service Area & <span className="gradient-text">Timings</span>
+            {t('serviceArea.title')} <span className="gradient-text">{t('serviceArea.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Check if we deliver to your area and our operating hours
+            {t('serviceArea.subtitle')}
           </p>
         </motion.div>
 
@@ -75,7 +77,7 @@ export default function ServiceArea() {
               <div className="bg-gradient-orange w-12 h-12 rounded-xl flex items-center justify-center">
                 <MapPin className="text-white" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Service Areas</h3>
+              <h3 className="text-2xl font-bold text-gray-900">{t('serviceArea.areasTitle')}</h3>
             </div>
 
             <motion.div
@@ -106,7 +108,7 @@ export default function ServiceArea() {
               viewport={{ once: true }}
             >
               <p className="text-sm text-gray-700">
-                <span className="font-bold text-orange-600">⚡ Quick Note:</span> Check your area during checkout. Minimum order ₹200. Free delivery on orders above ₹500.
+                {t('serviceArea.note')}
               </p>
             </motion.div>
           </motion.div>
@@ -123,7 +125,7 @@ export default function ServiceArea() {
               <div className="bg-gradient-to-br from-blue-500 to-purple-600 w-12 h-12 rounded-xl flex items-center justify-center">
                 <Clock className="text-white" size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Operating Hours</h3>
+              <h3 className="text-2xl font-bold text-gray-900">{t('serviceArea.hoursTitle')}</h3>
             </div>
 
             <div className="space-y-6">
@@ -152,7 +154,7 @@ export default function ServiceArea() {
                 viewport={{ once: true }}
               >
                 <p className="text-sm font-semibold text-green-800">
-                  ✓ Delivery time: 30-45 minutes from order confirmation
+                  {t('serviceArea.deliveryNote')}
                 </p>
               </motion.div>
             </div>

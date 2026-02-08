@@ -1,31 +1,33 @@
 'use client';
 import { motion } from 'framer-motion';
 import { MessageCircle, Smartphone, HomeIcon } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function HowToOrder() {
+  const { t } = useLanguage();
   const platforms = [
     {
       icon: Smartphone,
       title: 'Zomato',
-      description: 'Order on Zomato app for quick delivery',
+      description: t('howToOrder.zomatoDesc'),
       link: '#',
-      buttonText: 'Open Zomato',
+      buttonText: t('howToOrder.zomatoButton'),
       gradient: 'from-red-400 to-orange-500',
     },
     {
       icon: Smartphone,
       title: 'Swiggy',
-      description: 'Order on Swiggy for fast & reliable service',
+      description: t('howToOrder.swiggyDesc'),
       link: '#',
-      buttonText: 'Open Swiggy',
+      buttonText: t('howToOrder.swiggyButton'),
       gradient: 'from-orange-400 to-red-500',
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp Direct',
-      description: 'Send us your custom order directly',
+      description: t('howToOrder.whatsappDesc'),
       link: 'https://wa.me/919876543210',
-      buttonText: 'WhatsApp Us',
+      buttonText: t('howToOrder.whatsappButton'),
       gradient: 'from-green-400 to-emerald-500',
     },
   ];
@@ -61,10 +63,10 @@ export default function HowToOrder() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            How to <span className="gradient-text">Order</span>
+            {t('howToOrder.title')} <span className="gradient-text">{t('howToOrder.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Choose your favorite platform and place your order in seconds
+            {t('howToOrder.subtitle')}
           </p>
         </motion.div>
 
@@ -121,13 +123,13 @@ export default function HowToOrder() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-8 text-center">Simple 3-Step Process</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center">{t('howToOrder.stepsTitle')}</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { number: 1, title: 'Browse & Select', description: 'Choose your favorite dishes from our menu' },
-              { number: 2, title: 'Add to Cart', description: 'Customize as needed and add items to cart' },
-              { number: 3, title: 'Checkout', description: 'Complete payment and track your delivery' },
+              { number: 1, title: t('howToOrder.step1Title'), description: t('howToOrder.step1Desc') },
+              { number: 2, title: t('howToOrder.step2Title'), description: t('howToOrder.step2Desc') },
+              { number: 3, title: t('howToOrder.step3Title'), description: t('howToOrder.step3Desc') },
             ].map((step, index) => (
               <motion.div
                 key={index}

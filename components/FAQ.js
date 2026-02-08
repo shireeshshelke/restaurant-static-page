@@ -2,35 +2,19 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
+  const { t } = useLanguage();
 
   const faqs = [
-    {
-      question: 'Is the food spicy? Can I customize the spice level?',
-      answer: 'Most of our dishes are medium to high spice. However, we understand different preferences. You can always add special instructions during checkout to request mild, medium, or hot preparations. Our delivery partner will add a note with your order.'
-    },
-    {
-      question: 'Do you use packaged masalas or fresh spices?',
-      answer: 'We use a blend of fresh ground spices and premium quality masala powders. All our masalas are sourced from certified suppliers, and we grind them fresh daily to ensure maximum flavor and freshness.'
-    },
-    {
-      question: 'How do you ensure veg and non-veg separation?',
-      answer: 'We maintain strict segregation between vegetarian and non-vegetarian items. Different utensils, cutting boards, and preparation areas are used. Our FSSAI certification ensures compliance with all food safety regulations.'
-    },
-    {
-      question: 'What is your refund/cancellation policy?',
-      answer: 'Orders can be cancelled within 5 minutes of placement for a full refund. After that, it depends on the preparation status. In case of quality issues, we provide replacements or full refunds. Contact us immediately after delivery if there are any concerns.'
-    },
-    {
-      question: 'Can I pre-order meals? What about bulk orders?',
-      answer: 'Yes! You can pre-order meals up to 24 hours in advance. For bulk orders (10+ meals), please WhatsApp us directly for special pricing and customization. We handle corporate orders and event catering.'
-    },
-    {
-      question: 'How do you maintain food quality during delivery?',
-      answer: 'We use insulated, temperature-controlled containers for all deliveries. Our packaging is food-safe and designed to keep meals hot and fresh. All orders are dispatched within 5 minutes of preparation to minimize delivery time.'
-    },
+    { question: t('faq.q1'), answer: t('faq.a1') },
+    { question: t('faq.q2'), answer: t('faq.a2') },
+    { question: t('faq.q3'), answer: t('faq.a3') },
+    { question: t('faq.q4'), answer: t('faq.a4') },
+    { question: t('faq.q5'), answer: t('faq.a5') },
+    { question: t('faq.q6'), answer: t('faq.a6') },
   ];
 
   const containerVariants = {
@@ -65,13 +49,13 @@ export default function FAQ() {
         >
           <div className="inline-flex items-center gap-2 bg-orange-100 px-4 py-2 rounded-full mb-4">
             <HelpCircle size={18} className="text-orange-600" />
-            <span className="text-orange-600 font-semibold text-sm">COMMON QUESTIONS</span>
+            <span className="text-orange-600 font-semibold text-sm">{t('faq.badge')}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Frequently Asked <span className="gradient-text">Questions</span>
+            {t('faq.title')} <span className="gradient-text">{t('faq.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Get quick answers to common queries
+            {t('faq.subtitle')}
           </p>
         </motion.div>
 
@@ -141,16 +125,16 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-4">Still have questions?</h3>
+          <h3 className="text-2xl font-bold mb-4">{t('faq.contactTitle')}</h3>
           <p className="text-white/90 mb-6">
-            Our customer service team is ready to help! Reach out to us on WhatsApp for instant support.
+            {t('faq.contactDesc')}
           </p>
           <motion.button
             className="bg-white text-orange-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-orange-50 transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Contact Support
+            {t('faq.contactButton')}
           </motion.button>
         </motion.div>
       </div>
