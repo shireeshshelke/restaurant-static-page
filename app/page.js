@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import WhyChooseUs from '../components/WhyChooseUs';
 import MenuHighlights from '../components/MenuHighlights';
+import FullMenu from '../components/FullMenu';
 import HygieneShowcase from '../components/HygieneShowcase';
 import YourStory from '../components/YourStory';
 import Testimonials from '../components/Testimonials';
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <WhyChooseUs />
         <MenuHighlights />
+        <FullMenu />
         <HygieneShowcase />
         <YourStory />
         <Testimonials />

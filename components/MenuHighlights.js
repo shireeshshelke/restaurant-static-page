@@ -121,10 +121,35 @@ export default function MenuHighlights() {
                 </div>
 
                 {/* CTA */}
-                <button className="w-full btn-primary text-sm">{t('menu.viewMenu')}</button>
+                <button 
+                  onClick={() => document.getElementById('full-menu').scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full btn-primary text-sm hover:shadow-lg transition-shadow"
+                >
+                  {t('menu.viewMenu')}
+                </button>
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Full Menu CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-8 text-center border-2 border-orange-200"
+        >
+          <h3 className="text-3xl font-bold mb-3 text-gray-900">Want More Options?</h3>
+          <p className="text-gray-600 mb-6 text-lg">Browse our complete menu with 100+ delicious items</p>
+          <motion.button
+            onClick={() => document.getElementById('full-menu').scrollIntoView({ behavior: 'smooth' })}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-gradient-orange text-white px-8 py-3 rounded-full font-bold text-lg hover:shadow-lg transition-all"
+          >
+            View Full Menu
+          </motion.button>
         </motion.div>
       </div>
     </section>
