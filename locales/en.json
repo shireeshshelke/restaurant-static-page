@@ -1,6 +1,6 @@
 {
   "nav": {
-    "logo": "Cloud Kitchen",
+    "logo": "HomeEats",
     "tagline": "Ghar Jaisa Khana",
     "menu": "Menu",
     "about": "About",
@@ -142,11 +142,11 @@
     "stat3": "Avg Delivery"
   },
   "footer": {
-    "brandName": "Cloud Kitchen",
+    "brandName": "HomeEats",
     "tagline": "Ghar Jaisa Khana",
     "description": "Authentic, hygienic, home-cooked meals delivered fresh to your doorstep.",
     "contactSection": "Get in Touch",
-    "copyright": "Cloud Kitchen. All rights reserved. Made with ❤ in Pune.",
+    "copyright": "HomeEats. All rights reserved. Made with ❤ in Pune.",
     "cert1": "FSSAI Licensed",
     "cert2": "100% Hygienic"
   }

@@ -87,9 +87,6 @@ export default function MenuHighlights() {
                   src={category.image}
                   alt={category.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  onError={(e) => {
-                    e.target.src = `https://via.placeholder.com/400x300?text=${encodeURIComponent(category.title)}`;
-                  }}
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
 

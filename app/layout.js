@@ -2,11 +2,11 @@ import './globals.css';
 import { LanguageProvider } from '../context/LanguageContext';
 
 export const metadata = {
-  title: 'Cloud Kitchen | Authentic Hygienic Home-Cooked Meals',
-  description: 'Experience authentic home-style meals delivered fresh. 100% hygienic, fresh ingredients, family recipes. Order now from Cloud Kitchen in Pune.',
-  keywords: 'cloud kitchen, food delivery, home cooked meals, Pune, hygienic food, authentic recipes',
+  title: 'HomeEats | Authentic Hygienic Home-Cooked Meals',
+  description: 'Experience authentic home-style meals delivered fresh. 100% hygienic, fresh ingredients, family recipes. Order now from HomeEats in Pune.',
+  keywords: 'home eats, food delivery, home cooked meals, Pune, hygienic food, authentic recipes',
   openGraph: {
-    title: 'Cloud Kitchen | Ghar Jaisa Khana',
+    title: 'HomeEats | Ghar Jaisa Khana',
     description: 'Authentic Home-Style Meals Delivered Fresh',
     type: 'website',
   },

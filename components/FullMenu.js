@@ -5,35 +5,35 @@ import { Search, Leaf, Utensils } from 'lucide-react';
 
 const menuData = [
   // Pizza - Non Veg
-  { category: 'Pizza - Non Veg', name: 'Chicken Cheese Pizza', veg: false, price: 250 },
-  { category: 'Pizza - Non Veg', name: 'Chicken Tikka Pizza', veg: false, price: 280 },
-  { category: 'Pizza - Non Veg', name: 'Chicken BBQ Pizza', veg: false, price: 290 },
-  { category: 'Pizza - Non Veg', name: 'Chicken Peri Peri Pizza', veg: false, price: 290 },
-  { category: 'Pizza - Non Veg', name: 'Egg Pizza', veg: false, price: 200 },
-  { category: 'Pizza - Non Veg', name: 'Malai Chicken Pizza', veg: false, price: 300 },
-  { category: 'Pizza - Non Veg', name: 'Mutton Cheese Pizza', veg: false, price: 320 },
-  { category: 'Pizza - Non Veg', name: 'Chicken Kebab Pizza', veg: false, price: 300 },
-  { category: 'Pizza - Non Veg', name: 'Chicken Macaroni Pizza', veg: false, price: 280 },
-  { category: 'Pizza - Non Veg', name: 'Chicken Keema Pizza', veg: false, price: 280 },
-  { category: 'Pizza - Non Veg', name: 'Mutton Keema Pizza', veg: false, price: 320 },
+  { category: 'Pizza', name: 'Chicken Cheese Pizza', veg: false, price: 250 },
+  { category: 'Pizza', name: 'Chicken Tikka Pizza', veg: false, price: 280 },
+  { category: 'Pizza', name: 'Chicken BBQ Pizza', veg: false, price: 290 },
+  { category: 'Pizza', name: 'Chicken Peri Peri Pizza', veg: false, price: 290 },
+  { category: 'Pizza', name: 'Egg Pizza', veg: false, price: 200 },
+  { category: 'Pizza', name: 'Malai Chicken Pizza', veg: false, price: 300 },
+  { category: 'Pizza', name: 'Mutton Cheese Pizza', veg: false, price: 320 },
+  { category: 'Pizza', name: 'Chicken Kebab Pizza', veg: false, price: 300 },
+  { category: 'Pizza', name: 'Chicken Macaroni Pizza', veg: false, price: 280 },
+  { category: 'Pizza', name: 'Chicken Keema Pizza', veg: false, price: 280 },
+  { category: 'Pizza', name: 'Mutton Keema Pizza', veg: false, price: 320 },
 
   // Pizza - Veg
-  { category: 'Pizza - Veg', name: 'Margherita Pizza', veg: true, price: 180 },
-  { category: 'Pizza - Veg', name: 'Veg Cheese Pizza (Onion, Capsicum)', veg: true, price: 200 },
-  { category: 'Pizza - Veg', name: 'Sweet Corn Pizza', veg: true, price: 220 },
-  { category: 'Pizza - Veg', name: 'Baby Corn Pizza', veg: true, price: 220 },
-  { category: 'Pizza - Veg', name: 'Double Cheese Pizza', veg: true, price: 240 },
-  { category: 'Pizza - Veg', name: 'Chocolate Pizza', veg: true, price: 200 },
-  { category: 'Pizza - Veg', name: 'Paneer Tikka Pizza', veg: true, price: 260 },
-  { category: 'Pizza - Veg', name: 'Mushroom Pizza', veg: true, price: 230 },
-  { category: 'Pizza - Veg', name: 'Pan Pizza', veg: true, price: 210 },
-  { category: 'Pizza - Veg', name: 'Paneer Shawarma Pizza', veg: true, price: 270 },
+  { category: 'Pizza', name: 'Margherita Pizza', veg: true, price: 180 },
+  { category: 'Pizza', name: 'Veg Cheese Pizza (Onion, Capsicum)', veg: true, price: 200 },
+  { category: 'Pizza', name: 'Sweet Corn Pizza', veg: true, price: 220 },
+  { category: 'Pizza', name: 'Baby Corn Pizza', veg: true, price: 220 },
+  { category: 'Pizza', name: 'Double Cheese Pizza', veg: true, price: 240 },
+  { category: 'Pizza', name: 'Chocolate Pizza', veg: true, price: 200 },
+  { category: 'Pizza', name: 'Paneer Tikka Pizza', veg: true, price: 260 },
+  { category: 'Pizza', name: 'Mushroom Pizza', veg: true, price: 230 },
+  { category: 'Pizza', name: 'Pan Pizza', veg: true, price: 210 },
+  { category: 'Pizza', name: 'Paneer Shawarma Pizza', veg: true, price: 270 },
 
-  // Pizza - Italian Special
-  { category: 'Pizza - Italian Special', name: 'Pizza Alla Bufala (Buffalo Mozzarella)', veg: true, price: 350 },
-  { category: 'Pizza - Italian Special', name: 'Pizza Carrettiera (Sausage, Broccoli)', veg: false, price: 340 },
-  { category: 'Pizza - Italian Special', name: 'Pesto Chicken Pizza (Cherry Tomato, Basil)', veg: false, price: 330 },
-  { category: 'Pizza - Italian Special', name: 'Cajun Spice Pizza (Cajun Chicken, Red Paprika)', veg: false, price: 320 },
+  // Pizza - Italian Special (keeping as Pizza)
+  { category: 'Pizza', name: 'Pizza Alla Bufala (Buffalo Mozzarella)', veg: true, price: 350 },
+  { category: 'Pizza', name: 'Pizza Carrettiera (Sausage, Broccoli)', veg: false, price: 340 },
+  { category: 'Pizza', name: 'Pesto Chicken Pizza (Cherry Tomato, Basil)', veg: false, price: 330 },
+  { category: 'Pizza', name: 'Cajun Spice Pizza (Cajun Chicken, Red Paprika)', veg: false, price: 320 },
 
   // Burger
   { category: 'Burger', name: 'Classic Veg Burger', veg: true, price: 120 },
@@ -70,11 +70,11 @@ const menuData = [
   { category: 'Soups', name: 'White Chicken Soup', veg: false, price: 150 },
   { category: 'Soups', name: 'Manchow Soup', veg: true, price: 130 },
 
-  // Salads
-  { category: 'Salads', name: 'Italian Pasta Salad', veg: true, price: 140 },
-  { category: 'Salads', name: 'Orzo Pasta Salad', veg: true, price: 130 },
-  { category: 'Salads', name: 'Macaroni Salad', veg: true, price: 120 },
-  { category: 'Salads', name: 'Greek Pasta Salad', veg: true, price: 150 },
+  // Salads (Note: "Salad" in the user request)
+  { category: 'Salad', name: 'Italian Pasta Salad', veg: true, price: 140 },
+  { category: 'Salad', name: 'Orzo Pasta Salad', veg: true, price: 130 },
+  { category: 'Salad', name: 'Macaroni Salad', veg: true, price: 120 },
+  { category: 'Salad', name: 'Greek Pasta Salad', veg: true, price: 150 },
 
   // Indian Snacks
   { category: 'Indian Snacks', name: 'Pav Bhaji', veg: true, price: 100 },
@@ -82,6 +82,14 @@ const menuData = [
   { category: 'Indian Snacks', name: 'Special Pav Bhaji', veg: false, price: 140 },
   { category: 'Indian Snacks', name: 'Misal Pav', veg: true, price: 110 },
   { category: 'Indian Snacks', name: 'Veg Cutlets', veg: true, price: 90 },
+
+  // Indian Main Course (new category)
+  { category: 'Indian Main Course', name: 'Butter Chicken', veg: false, price: 280 },
+  { category: 'Indian Main Course', name: 'Paneer Tikka Masala', veg: true, price: 260 },
+  { category: 'Indian Main Course', name: 'Chole Bhature', veg: true, price: 180 },
+  { category: 'Indian Main Course', name: 'Dal Makhani', veg: true, price: 200 },
+  { category: 'Indian Main Course', name: 'Biryani', veg: false, price: 300 },
+  { category: 'Indian Main Course', name: 'Rogan Josh', veg: false, price: 290 },
 
   // Pasta
   { category: 'Pasta', name: 'Pasta with Pesto and Burrata', veg: true, price: 220 },
@@ -107,32 +115,38 @@ const menuData = [
 
 const categories = [
   'All',
-  'Pizza - Non Veg',
-  'Pizza - Veg',
-  'Pizza - Italian Special',
+  'Pizza',
   'Burger',
   'Starters',
   'Soups',
-  'Salads',
+  'Salad',
   'Indian Snacks',
+  'Indian Main Course',
   'Pasta',
   'Snacks',
 ];
 
+const vegFilters = ['All', 'Veg', 'Non-Veg'];
+
 export default function FullMenu() {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [vegFilter, setVegFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredItems = useMemo(() => {
     return menuData.filter((item) => {
       const matchCategory =
         activeCategory === 'All' || item.category === activeCategory;
+      const matchVeg =
+        vegFilter === 'All' ||
+        (vegFilter === 'Veg' && item.veg) ||
+        (vegFilter === 'Non-Veg' && !item.veg);
       const matchSearch = item.name
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
-      return matchCategory && matchSearch;
+      return matchCategory && matchVeg && matchSearch;
     });
-  }, [activeCategory, searchQuery]);
+  }, [activeCategory, vegFilter, searchQuery]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -199,8 +213,9 @@ export default function FullMenu() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15 }}
-          className="mb-16"
+          className="mb-6"
         >
+          <h3 className="text-xs font-semibold text-gray-600 mb-3 uppercase tracking-wide">Category</h3>
           <div className="flex gap-3 overflow-x-auto pb-4 px-2 scrollbar-hide">
             {categories.map((category) => (
               <motion.button
@@ -220,10 +235,42 @@ export default function FullMenu() {
           </div>
         </motion.div>
 
+        {/* Veg/Non-Veg Filter Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mb-12"
+        >
+          <h3 className="text-xs font-semibold text-gray-600 mb-3 uppercase tracking-wide flex items-center gap-2">
+            <Leaf size={14} className="text-green-500" />
+            Dietary Preference
+          </h3>
+          <div className="flex gap-3 flex-wrap">
+            {vegFilters.map((filter) => (
+              <motion.button
+                key={filter}
+                onClick={() => setVegFilter(filter)}
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                  vegFilter === filter
+                    ? 'bg-gradient-orange text-white shadow-lg scale-105'
+                    : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-orange-500'
+                }`}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {filter === 'Veg' && <span>🌱 {filter}</span>}
+                {filter === 'Non-Veg' && <span>🍗 {filter}</span>}
+                {filter === 'All' && <span>{filter}</span>}
+              </motion.button>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Items Grid */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeCategory}
+            key={`${activeCategory}-${vegFilter}`}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             variants={containerVariants}
             initial="hidden"
@@ -258,7 +305,7 @@ export default function FullMenu() {
                   <div className="p-6">
                     {/* Category Badge */}
                     <div className="inline-block bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-xs font-semibold mb-3">
-                      {item.category.split(' - ')[0]}
+                      {item.category}
                     </div>
 
                     {/* Item Name */}

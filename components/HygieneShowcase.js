@@ -101,9 +101,6 @@ export default function HygieneShowcase() {
                     src={practice.image}
                     alt={practice.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    onError={(e) => {
-                      e.target.src = `https://via.placeholder.com/300x300?text=${encodeURIComponent(practice.title)}`;
-                    }}
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
                 </div>
