@@ -314,16 +314,7 @@ export default function FullMenu() {
                     </h3>
 
                     {/* Price Section */}
-                    <div className="flex items-center justify-between">
-                      <div className="text-2xl font-bold gradient-text">₹{item.price}</div>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-orange text-white px-4 py-2 rounded-lg font-semibold text-sm hover:shadow-lg transition-all"
-                      >
-                        Add
-                      </motion.button>
-                    </div>
+                    <div className="text-2xl font-bold gradient-text">₹{item.price}</div>
                   </div>
 
                   {/* Bottom Border Accent */}
@@ -362,9 +353,9 @@ export default function FullMenu() {
           transition={{ delay: 0.4 }}
           className="mt-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-12 text-center text-white shadow-lg"
         >
-          <h3 className="text-3xl font-bold mb-4">Ready to Order?</h3>
+          <h3 className="text-3xl font-bold mb-4">Like What You See?</h3>
           <p className="text-orange-100 mb-6 text-lg">
-            All items prepared fresh with premium ingredients
+            All items prepared fresh with premium ingredients. Ready to place your order?
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -372,7 +363,7 @@ export default function FullMenu() {
             onClick={() => document.getElementById('order-section').scrollIntoView({ behavior: 'smooth' })}
             className="bg-white text-orange-600 px-10 py-3 rounded-full font-bold text-lg hover:bg-orange-50 transition-colors"
           >
-            Order Now
+            Place Order via WhatsApp or Call
           </motion.button>
         </motion.div>
       </div>

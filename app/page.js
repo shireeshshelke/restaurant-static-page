@@ -1,13 +1,13 @@
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import WhyChooseUs from '../components/WhyChooseUs';
+import MenuCard from '../components/MenuCard';
 import MenuHighlights from '../components/MenuHighlights';
 import FullMenu from '../components/FullMenu';
+import WhyChooseUs from '../components/WhyChooseUs';
 import HygieneShowcase from '../components/HygieneShowcase';
-import YourStory from '../components/YourStory';
 import Testimonials from '../components/Testimonials';
 import HowToOrder from '../components/HowToOrder';
-import ServiceArea from '../components/ServiceArea';
+import OperatingHours from '../components/OperatingHours';
 import FAQ from '../components/FAQ';
 import FinalCTA from '../components/FinalCTA';
 import Footer from '../components/Footer';
@@ -18,14 +18,14 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <WhyChooseUs />
+        <MenuCard />
         <MenuHighlights />
         <FullMenu />
+        <WhyChooseUs />
         <HygieneShowcase />
-        <YourStory />
         <Testimonials />
         <HowToOrder />
-        <ServiceArea />
+        <OperatingHours />
         <FAQ />
         <FinalCTA />
       </main>

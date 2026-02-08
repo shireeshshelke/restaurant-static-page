@@ -1,34 +1,38 @@
 'use client';
 import { motion } from 'framer-motion';
-import { MessageCircle, Smartphone, HomeIcon } from 'lucide-react';
+import { MessageCircle, Phone, CheckCircle, Clock } from 'lucide-react';
+import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+
+const PHONE_NUMBER = '+91 9876543210';
+const WHATSAPP_LINK = 'https://wa.me/919876543210';
 
 export default function HowToOrder() {
   const { t } = useLanguage();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(PHONE_NUMBER.replace(/\s/g, ''));
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   const platforms = [
     {
-      icon: Smartphone,
-      title: 'Zomato',
-      description: t('howToOrder.zomatoDesc'),
-      link: '#',
-      buttonText: t('howToOrder.zomatoButton'),
-      gradient: 'from-red-400 to-orange-500',
-    },
-    {
-      icon: Smartphone,
-      title: 'Swiggy',
-      description: t('howToOrder.swiggyDesc'),
-      link: '#',
-      buttonText: t('howToOrder.swiggyButton'),
-      gradient: 'from-orange-400 to-red-500',
-    },
-    {
       icon: MessageCircle,
-      title: 'WhatsApp Direct',
-      description: t('howToOrder.whatsappDesc'),
-      link: 'https://wa.me/919876543210',
-      buttonText: t('howToOrder.whatsappButton'),
+      title: 'WhatsApp',
+      description: 'Send your order directly on WhatsApp. Click to start a chat.',
+      link: WHATSAPP_LINK,
+      buttonText: 'Chat on WhatsApp',
       gradient: 'from-green-400 to-emerald-500',
+    },
+    {
+      icon: Phone,
+      title: 'Phone Call',
+      description: 'Call us directly to place your order. We\'re always ready to help!',
+      link: `tel:${PHONE_NUMBER.replace(/\s/g, '')}`,
+      buttonText: 'Call Now',
+      gradient: 'from-blue-400 to-cyan-500',
     },
   ];
 
@@ -54,6 +58,30 @@ export default function HowToOrder() {
   return (
     <section id="order-section" className="py-20 bg-gradient-to-b from-green-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4">
+        {/* Pickup Notification Banner */}
+        <motion.div
+          className="mb-16 bg-gradient-to-r from-orange-400 to-red-500 rounded-2xl p-8 text-white shadow-lg"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-4xl mx-auto">
+            <div className="flex gap-4 items-start md:items-center flex-col md:flex-row">
+              <Clock size={32} className="flex-shrink-0" />
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-2">📍 Pickup Location Only</h3>
+                <p className="text-white/90 text-lg mb-2">
+                  Currently, we operate from a fixed pickup location only. Home delivery will be available very soon!
+                </p>
+                <p className="text-white/80">
+                  <strong>Pickup Address:</strong> Pune, Maharashtra, India | <strong>Coming Soon:</strong> Full home delivery service
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Section Header */}
         <motion.div
           className="text-center mb-16"
@@ -63,16 +91,16 @@ export default function HowToOrder() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('howToOrder.title')} <span className="gradient-text">{t('howToOrder.titleHighlight')}</span>
+            Order <span className="gradient-text">Right Now</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t('howToOrder.subtitle')}
+            Place your order via WhatsApp or give us a call. We accept orders through these channels only.
           </p>
         </motion.div>
 
         {/* Platform Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-3xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -101,9 +129,26 @@ export default function HowToOrder() {
                 {/* Description */}
                 <p className="text-gray-600 mb-8">{platform.description}</p>
 
+                {/* Display Phone Number with Copy */}
+                {platform.title === 'Phone Call' && (
+                  <div className="mb-6 p-4 bg-gray-100 rounded-lg flex items-center justify-between">
+                    <span className="font-semibold text-gray-900">{PHONE_NUMBER}</span>
+                    <motion.button
+                      onClick={handleCopyPhone}
+                      className="text-sm font-semibold text-blue-600 hover:text-blue-700 ml-2 whitespace-nowrap"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {copied ? '✓ Copied' : 'Copy'}
+                    </motion.button>
+                  </div>
+                )}
+
                 {/* Button */}
                 <motion.a
                   href={platform.link}
+                  target={platform.title === 'WhatsApp' ? '_blank' : undefined}
+                  rel={platform.title === 'WhatsApp' ? 'noopener noreferrer' : undefined}
                   className={`inline-block w-full text-center bg-gradient-to-r ${platform.gradient} text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:shadow-lg`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -115,7 +160,7 @@ export default function HowToOrder() {
           ))}
         </motion.div>
 
-        {/* Steps */}
+        {/* Process Steps */}
         <motion.div
           className="bg-white rounded-2xl shadow-soft p-8 md:p-12"
           initial={{ opacity: 0, y: 20 }}
@@ -123,13 +168,13 @@ export default function HowToOrder() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-8 text-center">{t('howToOrder.stepsTitle')}</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center">How to Order</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { number: 1, title: t('howToOrder.step1Title'), description: t('howToOrder.step1Desc') },
-              { number: 2, title: t('howToOrder.step2Title'), description: t('howToOrder.step2Desc') },
-              { number: 3, title: t('howToOrder.step3Title'), description: t('howToOrder.step3Desc') },
+              { number: 1, title: 'Choose Your Items', description: 'Browse our menu and select what you love' },
+              { number: 2, title: 'Contact Us', description: 'WhatsApp or call us with your order' },
+              { number: 3, title: 'Pickup Your Food', description: 'Pick up your fresh, hot meal at our location' },
             ].map((step, index) => (
               <motion.div
                 key={index}
@@ -143,15 +188,6 @@ export default function HowToOrder() {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-orange text-white text-2xl font-bold mb-4">
                   {step.number}
                 </div>
-
-                {/* Arrow */}
-                {index < 2 && (
-                  <div className="hidden md:flex justify-center absolute right-0 translate-x-1/2">
-                    <svg className="w-8 h-8 text-orange-300 -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                    </svg>
-                  </div>
-                )}
 
                 <h4 className="font-bold text-lg text-gray-900 mb-2">{step.title}</h4>
                 <p className="text-gray-600">{step.description}</p>

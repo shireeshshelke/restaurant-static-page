@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Sparkles, Flame } from 'lucide-react';
+import { Sparkles, Flame, MapPin } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { getImagePath } from '../lib/imageUtils';
 
@@ -35,11 +35,22 @@ export default function Hero() {
       {/* Content */}
       <div className="relative h-full flex items-center justify-center px-4">
         <motion.div
-          className="text-center text-white max-w-2xl"
+          className="text-center text-white max-w-3xl"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
+          {/* Business Name - HomeEats */}
+          <motion.div
+            className="mb-6"
+            variants={itemVariants}
+          >
+            <h2 className="text-5xl md:text-6xl lg:text-8xl font-black bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent drop-shadow-2xl">
+              HomeEats
+            </h2>
+            <p className="text-orange-300 text-lg md:text-2xl font-semibold mt-2 italic">Ghar Jaisa Khana</p>
+          </motion.div>
+
           {/* Trust badge */}
           <motion.div
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/20"
@@ -51,7 +62,7 @@ export default function Hero() {
 
           {/* Main Headline */}
           <motion.h1
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
             variants={itemVariants}
           >
             {t('hero.headline').split('Authentic').map((part, i) => (
@@ -85,15 +96,32 @@ export default function Hero() {
             className="flex flex-col md:flex-row gap-4 justify-center items-center"
             variants={itemVariants}
           >
-            <button className="btn-primary text-lg md:text-xl">
+            <button
+              onClick={() => document.getElementById('full-menu').scrollIntoView({ behavior: 'smooth' })}
+              className="btn-primary text-lg md:text-xl"
+            >
               <span className="flex items-center gap-2 justify-center">
                 <Flame size={20} />
-                {t('hero.orderBtn')}
+                View Menu
               </span>
             </button>
-            <button className="btn-secondary text-lg md:text-xl">
-              {t('hero.watchBtn')}
-            </button>
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary text-lg md:text-xl"
+            >
+              Order on WhatsApp
+            </a>
+            <a
+              href="#pickup-location"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-bold text-lg md:text-xl hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <span className="flex items-center gap-2 justify-center">
+                <MapPin size={20} />
+                Pickup Location
+              </span>
+            </a>
           </motion.div>
 
           {/* Scroll indicator */}
