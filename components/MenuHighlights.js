@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { getImagePath } from '../lib/imageUtils';
 
 export default function MenuHighlights() {
   const { t } = useLanguage();
@@ -9,19 +10,19 @@ export default function MenuHighlights() {
   const categories = [
     {
       title: t('menu.category1'),
-      image: '/images/maharashtrian.jpg',
+      image: getImagePath('/images/maharashtrian.jpg'),
       dishes: ['Misal Pav', 'Batata Vada', 'Puran Poli', 'Ukdiche Modak', 'Amboli'],
       rating: 4.8,
     },
     {
       title: t('menu.category2'),
-      image: '/images/curries.jpg',
+      image: getImagePath('/images/curries.jpg'),
       dishes: ['Butter Chicken', 'Paneer Tikka Masala', 'Chole Bhature', 'Dal Makhani', 'Biryani'],
       rating: 4.9,
     },
     {
       title: t('menu.category3'),
-      image: '/images/western.jpg',
+      image: getImagePath('/images/western.jpg'),
       dishes: ['Momos', 'Cheese Naan', 'Garlic Bread', 'Loaded Fries', 'Spring Rolls'],
       rating: 4.7,
     },

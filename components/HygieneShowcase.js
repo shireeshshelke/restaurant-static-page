@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { CheckCircle, Droplets, Wind, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { getImagePath } from '../lib/imageUtils';
 
 export default function HygieneShowcase() {
   const { t } = useLanguage();
@@ -10,25 +11,25 @@ export default function HygieneShowcase() {
       icon: ShieldCheck,
       title: t('hygiene.practice1'),
       description: t('hygiene.practice1Desc'),
-      image: '/images/hygiene-certification.jpg',
+      image: getImagePath('/images/hygiene-certification.jpg'),
     },
     {
       icon: Wind,
       title: t('hygiene.practice2'),
       description: t('hygiene.practice2Desc'),
-      image: '/images/hygiene-kitchen.jpg',
+      image: getImagePath('/images/hygiene-kitchen.jpg'),
     },
     {
       icon: Droplets,
       title: t('hygiene.practice3'),
       description: t('hygiene.practice3Desc'),
-      image: '/images/hygiene-vegetables.jpg',
+      image: getImagePath('/images/hygiene-vegetables.jpg'),
     },
     {
       icon: CheckCircle,
       title: t('hygiene.practice4'),
       description: t('hygiene.practice4Desc'),
-      image: '/images/hygiene-staff.jpg',
+      image: getImagePath('/images/hygiene-staff.jpg'),
     },
   ];
 

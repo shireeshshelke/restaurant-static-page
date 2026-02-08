@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Heart, Users, Leaf } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { getImagePath } from '../lib/imageUtils';
 
 export default function YourStory() {
   const { t } = useLanguage();
@@ -43,7 +44,7 @@ export default function YourStory() {
             viewport={{ once: true }}
           >
             <img
-              src="/images/story.jpg"
+              src={getImagePath('/images/story.jpg')}
               alt="Our Story"
               className="w-full h-full object-cover"
               onError={(e) => {

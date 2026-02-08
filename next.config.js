@@ -10,6 +10,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+
+  // Expose basePath to client-side code
+  env: {
+    NEXT_PUBLIC_BASE_PATH: process.env.NODE_ENV === 'production' ? '/restaurant-static-page' : '',
+  },
 };
 
 module.exports = nextConfig;

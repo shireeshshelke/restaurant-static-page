@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Sparkles, Flame } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { getImagePath } from '../lib/imageUtils';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -27,7 +28,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/hero.jpg')" }}>
+    <section className="relative h-screen bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url('${getImagePath('/images/hero.jpg')}')` }}>
       {/* Overlay with gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60"></div>
 
