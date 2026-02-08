@@ -29,7 +29,7 @@ export default function OperatingHours() {
   };
 
   return (
-    <section id="pickup-location" className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+    <section id="pickup-location" className="py-20 bg-gradient-to-br from-orange-50 via-white to-red-50">
       <div className="max-w-4xl mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -48,14 +48,14 @@ export default function OperatingHours() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Operating Hours */}
           <motion.div
-            className="bg-white rounded-2xl shadow-soft p-8"
+            className="bg-white rounded-2xl shadow-soft p-8 border-l-4 border-orange-500 hover:shadow-medium transition-all duration-300"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 w-12 h-12 rounded-xl flex items-center justify-center">
+              <div className="bg-gradient-to-br from-orange-500 to-red-600 w-12 h-12 rounded-xl flex items-center justify-center">
                 <Clock className="text-white" size={24} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">Business Hours</h3>
@@ -71,12 +71,12 @@ export default function OperatingHours() {
               {businessHours.map((schedule, index) => (
                 <motion.div
                   key={index}
-                  className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border-2 border-blue-200 hover:border-blue-400 transition-all duration-300"
+                  className="p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-md"
                   variants={itemVariants}
                 >
                   <h4 className="font-bold text-gray-900 text-lg mb-2">{schedule.day}</h4>
                   <div className="flex items-center gap-2 text-gray-700">
-                    <Clock size={18} className="text-blue-500 flex-shrink-0" />
+                    <Clock size={18} className="text-orange-500 flex-shrink-0" />
                     <span className="text-lg font-semibold">{schedule.time}</span>
                   </div>
                 </motion.div>
@@ -84,13 +84,13 @@ export default function OperatingHours() {
             </motion.div>
 
             <motion.div
-              className="mt-6 p-4 bg-yellow-50 rounded-xl border-2 border-yellow-200"
+              className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl border-2 border-orange-200 hover:shadow-md transition-all"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <p className="text-sm font-semibold text-yellow-900">
+              <p className="text-sm font-semibold text-orange-900">
                 ⚡ <strong>Quick Note:</strong> Delivery time is 30-45 minutes from confirmation
               </p>
             </motion.div>
@@ -98,14 +98,14 @@ export default function OperatingHours() {
 
           {/* Pickup Location */}
           <motion.div
-            className="bg-white rounded-2xl shadow-soft p-8"
+            className="bg-white rounded-2xl shadow-soft p-8 border-l-4 border-red-500 hover:shadow-medium transition-all duration-300"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="bg-gradient-to-br from-pink-500 to-red-600 w-12 h-12 rounded-xl flex items-center justify-center">
+              <div className="bg-gradient-to-br from-red-500 to-orange-600 w-12 h-12 rounded-xl flex items-center justify-center">
                 <MapPin className="text-white" size={24} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">Pickup Location</h3>
@@ -119,7 +119,7 @@ export default function OperatingHours() {
               viewport={{ once: true }}
             >
               {/* Address */}
-              <div className="p-6 bg-gradient-to-br from-pink-50 to-red-50 rounded-xl border-2 border-pink-200">
+              <div className="p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-xl border-2 border-orange-200 hover:shadow-md transition-all">
                 <h4 className="font-bold text-gray-900 text-lg mb-2">🏠 Address</h4>
                 <p className="text-gray-700 text-lg font-semibold">
                   Pune, Maharashtra, India
@@ -130,7 +130,7 @@ export default function OperatingHours() {
               </div>
 
               {/* Coming Soon */}
-              <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border-2 border-green-200">
+              <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border-2 border-green-200 hover:shadow-md transition-all">
                 <h4 className="font-bold text-gray-900 text-lg mb-2">🚀 Coming Soon</h4>
                 <p className="text-gray-700 font-semibold">Full Home Delivery Service</p>
                 <p className="text-gray-600 mt-2 text-sm">
@@ -139,7 +139,7 @@ export default function OperatingHours() {
               </div>
 
               {/* Party Orders */}
-              <div className="p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl border-2 border-purple-200">
+              <div className="p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-xl border-2 border-orange-200 hover:shadow-md transition-all">
                 <h4 className="font-bold text-gray-900 text-lg mb-2">🎉 Party Orders</h4>
                 <p className="text-gray-700 font-semibold">Order &gt;₹1000 = Free Delivery</p>
                 <p className="text-gray-600 mt-2 text-sm">

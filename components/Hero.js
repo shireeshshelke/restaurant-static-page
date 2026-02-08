@@ -116,7 +116,7 @@ export default function Hero() {
             </a>
             <a
               href="#pickup-location"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-bold text-lg md:text-xl hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-3 rounded-full font-bold text-lg md:text-xl hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white/30 backdrop-blur-sm"
             >
               <span className="flex items-center gap-2 justify-center">
                 <MapPin size={20} />

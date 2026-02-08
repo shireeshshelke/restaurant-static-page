@@ -103,7 +103,7 @@ h3 {
 }
 
 .btn-secondary {
-  @apply px-6 py-2 bg-white text-orange-500 font-semibold rounded-full border-2 border-orange-500 transition-all duration-300 hover:bg-orange-50;
+  @apply px-6 py-2 bg-white text-orange-500 font-semibold rounded-full border-2 border-orange-500 transition-all duration-300 hover:bg-orange-50 hover:shadow-lg hover:scale-105;
 }
 
 /* Shadows */
@@ -118,4 +118,53 @@ h3 {
 /* Section spacing */
 section {
   scroll-margin-top: 80px;
+}
+
+/* Enhanced focus states for accessibility */
+button:focus-visible, a:focus-visible {
+  outline: 2px solid #ff6b5b;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling enhancement */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Image optimization */
+img {
+  loading: lazy;
+}
+
+/* Link hover enhancement */
+a {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff6b5b 0%, #ffa500 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff5744 0%, #ff8c00 100%);
+}
+
+/* Responsive text scaling */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
 }

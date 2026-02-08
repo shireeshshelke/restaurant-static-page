@@ -163,7 +163,7 @@ export default function MenuCard() {
             >
               <Link
                 href="/menu"
-                className="inline-block bg-yellow-400 text-orange-900 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105"
+                className="inline-block bg-yellow-400 text-orange-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
               >
                 View Full Menu
               </Link>
@@ -171,7 +171,7 @@ export default function MenuCard() {
                 href="https://wa.me/919876543210"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/20 text-white px-8 py-3 rounded-full font-bold text-lg border border-white/50 hover:bg-white/30 transition-all duration-300 hover:scale-105"
+                className="bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg border-2 border-white/50 hover:bg-white/30 hover:border-white/80 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 backdrop-blur-sm"
               >
                 Order Now
               </a>
