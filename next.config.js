@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static export for GitHub Pages
-  output: 'export',
+  // Enable static export only for production builds (GitHub Pages)
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
   
-  // Set basePath for subdirectory deployment on GitHub Pages
-  basePath: '/restaurant-static-page',
+  // Set basePath only for production builds (GitHub Pages subdirectory)
+  basePath: process.env.NODE_ENV === 'production' ? '/restaurant-static-page' : '',
   
   // Disable Image Optimization for static export
   images: {
