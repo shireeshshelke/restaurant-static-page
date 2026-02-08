@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Sparkles, Flame, MapPin } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
@@ -96,15 +97,15 @@ export default function Hero() {
             className="flex flex-col md:flex-row gap-4 justify-center items-center"
             variants={itemVariants}
           >
-            <button
-              onClick={() => document.getElementById('full-menu').scrollIntoView({ behavior: 'smooth' })}
+            <Link
+              href="/menu"
               className="btn-primary text-lg md:text-xl"
             >
               <span className="flex items-center gap-2 justify-center">
                 <Flame size={20} />
                 View Menu
               </span>
-            </button>
+            </Link>
             <a
               href="https://wa.me/919876543210"
               target="_blank"

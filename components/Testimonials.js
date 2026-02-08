@@ -11,28 +11,24 @@ export default function Testimonials() {
       locality: 'Pune, Koregaon Park',
       rating: 5,
       quote: 'Finally found authentic Maharashtrian food that tastes like my mom makes! The quality is consistent and they deliver hot meals right on time.',
-      image: 'https://via.placeholder.com/80?text=PS',
     },
     {
       name: 'Rahul Desai',
       locality: 'Pune, Baner',
       rating: 5,
       quote: 'The hygiene standards they follow are top-notch. I can really feel the care in every dish. Worth every penny!',
-      image: 'https://via.placeholder.com/80?text=RD',
     },
     {
       name: 'Anjali Patel',
       locality: 'Pune, Wakad',
       rating: 5,
       quote: 'Ordering from here for 3 months now. The taste never changes, quality is premium, and they always deliver on time. Highly recommend!',
-      image: 'https://via.placeholder.com/80?text=AP',
     },
     {
       name: 'Vikram Singh',
       locality: 'Pune, Viman Nagar',
       rating: 5,
       quote: 'Best cloud kitchen in Pune. The butter chicken here is absolutely mouthwatering. A must-try for butter chicken lovers!',
-      image: 'https://via.placeholder.com/80?text=VS',
     },
   ];
 

@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Utensils, PartyPopper, Award } from 'lucide-react';
 import { getImagePath } from '../lib/imageUtils';
@@ -160,12 +161,12 @@ export default function MenuCard() {
               transition={{ delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <button
-                onClick={() => document.getElementById('full-menu').scrollIntoView({ behavior: 'smooth' })}
-                className="bg-yellow-400 text-orange-900 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105"
+              <Link
+                href="/menu"
+                className="inline-block bg-yellow-400 text-orange-900 px-8 py-3 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all duration-300 hover:scale-105"
               >
                 View Full Menu
-              </button>
+              </Link>
               <a
                 href="https://wa.me/919876543210"
                 target="_blank"
