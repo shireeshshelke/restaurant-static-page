@@ -60,7 +60,7 @@ export default function PartyHero() {
             className="text-2xl text-white/90 mb-10 font-light"
             variants={itemVariants}
           >
-            Complete catering solutions - food, dishes, décor items, and everything you need for unforgettable celebrations
+            Complete party food solutions — food, serving dishes, disposables and essentials. We provide food and materials only (no manpower).
           </motion.p>
 
           {/* Features */}
@@ -78,7 +78,7 @@ export default function PartyHero() {
             </div>
             <div className="flex items-center gap-3 bg-white/10 backdrop-blur px-4 py-2 rounded-full">
               <span>✨</span>
-              <span>Expert Service</span>
+              <span>Quality Food & Materials</span>
             </div>
           </motion.div>
 

@@ -23,12 +23,6 @@ export default function PartyServices() {
       color: 'from-pink-400 to-red-500',
     },
     {
-      icon: Users,
-      title: 'Event Support',
-      description: 'Professional staff support for seamless service at your event.',
-      color: 'from-yellow-400 to-orange-500',
-    },
-    {
       icon: Clock,
       title: 'Flexible Timing',
       description: 'We accommodate your schedule. Early morning to late night service available.',
